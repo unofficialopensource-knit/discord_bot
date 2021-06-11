@@ -11,7 +11,6 @@ ensure_newline_before_comments = true
 force_single_line = true
 include_trailing_comma = true
 use_parentheses = true
-skip = "migrations"
 force_grid_wrap = 0
 lines_after_imports = 2
 lines_between_types = 1
