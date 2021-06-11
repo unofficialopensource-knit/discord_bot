@@ -1,0 +1,19 @@
+version: "3.8"
+
+networks:
+  discord_bot:
+    name: discord_bot
+
+services:
+  discord_bot:
+    image: discord_bot:development
+    build:
+      context: .
+    networks:
+      - discord_bot
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/usr/src/app
+    env_file:
+      - .env
