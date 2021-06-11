@@ -75,8 +75,7 @@ jobs:
         with:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
-          platforms: linux/amd64,linux/arm/v7
-          # platforms: linux/amd64
+          platforms: linux/amd64
           push: false
 
       - name: "Move cache"
