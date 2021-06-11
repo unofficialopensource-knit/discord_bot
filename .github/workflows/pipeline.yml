@@ -1,0 +1,43 @@
+name: "Pipeline"
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - release
+
+jobs:
+  test:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: "ubuntu-20.04"
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.9.4"
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+
+      - name: "Install test dependencies"
+        run: |
+          pip install --upgrade pip setuptools wheel
+          pip install --requirement requirements/prod.txt
+          pip install --requirement requirements/test.txt
+
+      - name: "Run black for formatting"
+        run: black --config config/pyproject.toml .
+
+      - name: "Run flake8 for linting"
+        run: flake8 --config config/setup.cfg .
+
+      - name: "Run isort for imports formatting"
+        run: isort --check --settings-file config/pyproject.toml .
