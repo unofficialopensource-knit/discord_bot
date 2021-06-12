@@ -12,7 +12,7 @@ services:
     networks:
       - discord_bot
     ports:
-      - 8000:8000
+      - 7000:8000
     volumes:
       - .:/usr/src/app
     env_file:
