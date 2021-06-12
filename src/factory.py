@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
-from config import settings
+from config.settings import ServerConfig
 
 
 def create_app() -> FastAPI:
@@ -19,7 +19,7 @@ def create_app() -> FastAPI:
         allow_credentials=True,
         allow_headers=["*"],
         allow_methods=["*"],
-        allow_origins=[str(origin) for origin in settings.CORS_ORIGINS],
+        allow_origins=[str(origin) for origin in ServerConfig.CORS_ORIGINS],
     )
 
     return app
