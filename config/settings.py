@@ -3,16 +3,20 @@ from logging import StreamHandler
 from logging import getLogger
 from os import getenv
 
+from dataclasses import dataclass
 
-DISCORD_BOT_TOKEN = getenv("DISCORD_BOT_TOKEN")
 
+@dataclass
+class Config:
+    DISCORD_BOT_TOKEN = getenv("DISCORD_BOT_TOKEN")
 
-def setup_logging():
-    formatter = Formatter("%(asctime)s:%(levelname)s:%(name)s: %(message)s")
+    @classmethod
+    def setup_logging(cls):
+        formatter = Formatter("%(asctime)s:%(levelname)s:%(name)s: %(message)s")
 
-    handler = StreamHandler()
-    handler.setFormatter(formatter)
+        handler = StreamHandler()
+        handler.setFormatter(formatter)
 
-    logger = getLogger("discord")
-    logger.setLevel(getenv("LOG_LEVEL"))
-    logger.addHandler(handler)
+        logger = getLogger("discord")
+        logger.setLevel(getenv("LOG_LEVEL"))
+        logger.addHandler(handler)

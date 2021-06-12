@@ -1,9 +1,9 @@
 from src.client import GitHubClient
 
-from config import settings
+from config.settings import Config
 
 
 if __name__ == "__main__":
-    settings.setup_logging()
+    Config.setup_logging()
 
-    GitHubClient().run(settings.DISCORD_BOT_TOKEN)
+    GitHubClient().run(Config.DISCORD_BOT_TOKEN)
