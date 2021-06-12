@@ -82,3 +82,18 @@ jobs:
         run: |
           rm -rf /tmp/.buildx-cache
           mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+
+  deploy:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "Deploy the web dyno"
+        uses: "akhileshns/heroku-deploy@v3.12.12"
+        with:
+          docker_heroku_process_type: web
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: discord-bot-web
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          usedocker: true
