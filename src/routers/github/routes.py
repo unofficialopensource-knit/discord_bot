@@ -8,5 +8,5 @@ router = APIRouter()
 
 @router.post("/")
 async def webhook() -> Dict[str, str]:
-    """WebHook for GitHub endpoint"""
+    """Webhook for GitHub endpoint"""
     return {"status": "ok"}
