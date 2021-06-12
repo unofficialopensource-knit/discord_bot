@@ -1,8 +1,8 @@
 from fastapi import FastAPI
+from src.routers.health import health_router
 from starlette.middleware.cors import CORSMiddleware
 
 from config.settings import ServerConfig
-from src.routers.health import health_router
 
 
 def create_app() -> FastAPI:
