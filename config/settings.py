@@ -7,7 +7,7 @@ from os import getenv
 DISCORD_BOT_TOKEN = getenv("DISCORD_BOT_TOKEN")
 
 
-def setup_logging() -> None:
+def setup_logging():
     formatter = Formatter("%(asctime)s:%(levelname)s:%(name)s: %(message)s")
 
     handler = StreamHandler()
