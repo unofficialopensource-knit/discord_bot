@@ -1,4 +1,3 @@
-from logging import INFO
 from logging import Formatter
 from logging import StreamHandler
 from logging import getLogger
@@ -15,5 +14,5 @@ def setup_logging() -> None:
     handler.setFormatter(formatter)
 
     logger = getLogger("discord")
-    logger.setLevel(INFO)
+    logger.setLevel(getenv("LOG_LEVEL"))
     logger.addHandler(handler)
