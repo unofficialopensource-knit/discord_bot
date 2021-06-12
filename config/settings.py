@@ -1,9 +1,8 @@
+from dataclasses import dataclass
 from logging import Formatter
 from logging import StreamHandler
 from logging import getLogger
 from os import getenv
-
-from dataclasses import dataclass
 
 
 @dataclass
