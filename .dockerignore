@@ -1,9 +1,12 @@
 .git/
 .github/
 .vscode/
+tests/
 
+*.toml
 *ignore
 .env*
+.python-version
 *.yml
 Dockerfile
 *.md
