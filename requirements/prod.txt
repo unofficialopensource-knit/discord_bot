@@ -1,1 +1,12 @@
-discord.py==1.7.2
+# For web server support
+fastapi==0.65.1
+uvicorn==0.14.0
+gunicorn==20.1.0
+
+# Optional dependency for fastapi
+httptools==0.2.0
+uvloop==0.15.2
+ujson==4.0.2
+
+# Dependencies for request routing
+httpx==0.18.1
