@@ -12,4 +12,4 @@ USER discord_bot_user
 
 COPY --chown=discord_bot_user:discord_bot_user . .
 
-CMD ["gunicorn", "--config", "'python:config.wsgi'"]
+CMD ["scripts/entrypoint.sh"]
