@@ -12,4 +12,4 @@ USER discord_bot_user
 
 COPY --chown=discord_bot_user:discord_bot_user . .
 
-CMD ["python", "src/app.py"]
+CMD ["python", "manage.py"]
