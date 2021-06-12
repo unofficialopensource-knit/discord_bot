@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from src.routers.health import health_router
+from src.routers.github import github_router
 from starlette.middleware.cors import CORSMiddleware
 
 from config.settings import ServerConfig
@@ -23,5 +24,6 @@ def create_app() -> FastAPI:
         allow_origins=[str(origin) for origin in ServerConfig.CORS_ORIGINS],
     )
     app.include_router(health_router, prefix="/health")
+    app.include_router(github_router, prefix="/webhook/github")
 
     return app
