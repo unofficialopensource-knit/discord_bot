@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from src.routers.health import health_router
 from src.routers.github import github_router
+from src.routers.health import health_router
 from starlette.middleware.cors import CORSMiddleware
 
 from config.settings import ServerConfig
