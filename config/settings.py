@@ -1,4 +1,7 @@
-from logging import getLogger, INFO, StreamHandler, Formatter
+from logging import INFO
+from logging import Formatter
+from logging import StreamHandler
+from logging import getLogger
 from os import getenv
 
 

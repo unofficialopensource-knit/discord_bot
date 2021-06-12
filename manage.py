@@ -1,5 +1,6 @@
-from config import settings
 from src.client import GitHubClient
+
+from config import settings
 
 
 if __name__ == "__main__":
