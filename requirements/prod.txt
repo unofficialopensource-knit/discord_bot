@@ -6,7 +6,7 @@ gunicorn==20.1.0
 # Optional dependency for fastapi
 httptools==0.2.0
 uvloop==0.15.2
-ujson==4.0.2
+ujson==5.2.0
 
 # Dependencies for request routing
 httpx==0.18.1
