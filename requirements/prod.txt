@@ -1,5 +1,5 @@
 # For web server support
-fastapi==0.65.2
+fastapi==0.109.1
 uvicorn==0.14.0
 gunicorn==20.1.0
 
